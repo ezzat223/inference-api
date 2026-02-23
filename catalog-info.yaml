@@ -1,0 +1,29 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: inference-api
+  title: LLM Inference API
+  description: >
+    OpenAI-compatible inference service for all fine-tuned LLMs.
+    Central serving layer for the ML Platform.
+  tags:
+    - python
+    - fastapi
+    - llm
+    - inference
+    - mlops
+    - llmops
+  annotations:
+    github.com/project-slug: ezzat223/inference-api
+    backstage.io/techdocs-ref: dir:.
+  links:
+    - url: https://grafana.internal/d/inference
+      title: Grafana Dashboard
+      icon: dashboard
+spec:
+  type: service
+  lifecycle: production
+  owner: mlops-team
+  system: ml-platform
+  dependsOn:
+    - component:model-registry

@@ -1,0 +1,29 @@
+site_name: LLM Inference API
+site_description: OpenAI-compatible inference service for fine-tuned LLMs
+repo_url: https://github.com/ezzat223/inference-api
+edit_uri: edit/main/docs/
+
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - API Reference: api-reference.md
+  - Architecture: architecture.md
+  - Configuration: configuration.md
+  - Runbooks:
+    - Deployment: runbooks/deployment.md
+    - Troubleshooting: runbooks/troubleshooting.md
+    - Scaling: runbooks/scaling.md
+  - Contributing: contributing.md
+
+plugins:
+  - techdocs-core
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+  - toc:
+      permalink: true

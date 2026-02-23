@@ -1,0 +1,11 @@
+fastapi
+uvicorn[standard]
+pydantic
+pydantic-settings
+httpx
+prometheus-fastapi-instrumentator
+
+# Testing
+pytest
+pytest-asyncio
+pytest-cov
