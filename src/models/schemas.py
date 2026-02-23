@@ -8,7 +8,7 @@ class Message(BaseModel):
 
 
 class CompletionRequest(BaseModel):
-    model: str = Field(..., example="llama3-8b-ft-v2")
+    model: str = Field(..., json_schema_extra={"example": "llama3-8b-ft-v2"})
     messages: List[Message]
     max_tokens: Optional[int] = Field(None, ge=1, le=8192)
     temperature: Optional[float] = Field(None, ge=0.0, le=2.0)
