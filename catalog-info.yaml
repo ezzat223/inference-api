@@ -20,6 +20,9 @@ metadata:
     - url: https://grafana.internal/d/inference
       title: Grafana Dashboard
       icon: dashboard
+    - url: https://jira.internal/secure/RapidBoard.jspa?rapidView=123&projectKey=MLOPS
+      title: jira dashboard
+      icon: jira
 spec:
   type: service
   lifecycle: production

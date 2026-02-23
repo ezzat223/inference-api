@@ -1,6 +1,6 @@
 import time
 import uuid
-from typing import AsyncGenerator, Dict
+from typing import AsyncGenerator
 
 import httpx
 
@@ -10,7 +10,7 @@ from src.models.schemas import (
     Choice, ChoiceMessage, CompletionChunk, CompletionRequest,
     CompletionResponse, DeltaMessage, StreamChoice, Usage,
 )
-from src.services.model_registry import ModelRegistryClient, ModelNotFoundError
+from src.services.model_registry import ModelRegistryClient
 
 logger = get_logger(__name__)
 
