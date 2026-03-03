@@ -15,6 +15,8 @@ This repository is registered in Backstage via `catalog-info.yaml` with:
 - `github.com/project-slug`: `ezzat223/inference-api`
 - `backstage.io/techdocs-ref`: `dir:.`
 
+TechDocs annotation format is `backstage.io/techdocs-ref: <value>`.
+
 ## Local Backstage + Kubernetes Demo
 
 Apply demo resources labeled for Backstage discovery:
@@ -22,6 +24,13 @@ Apply demo resources labeled for Backstage discovery:
 ```bash
 kubectl apply -f k8s/backstage-demo.yaml
 kubectl get deploy,po,svc -n default -l backstage.io/kubernetes-id=demo-app
+```
+
+If Deployment apply fails with `spec.selector ... field is immutable`:
+
+```bash
+kubectl delete deployment demo-app -n default --ignore-not-found
+kubectl apply -f k8s/backstage-demo.yaml
 ```
 
 Then open the component in Backstage and verify:

@@ -33,6 +33,7 @@ If the GitHub card is empty:
 ## 3) TechDocs connection
 
 TechDocs is sourced from this repo via `backstage.io/techdocs-ref: dir:.` with navigation in `mkdocs.yml`.
+The annotation format is `backstage.io/techdocs-ref: <value>` (current value is `dir:.`).
 
 To verify:
 
@@ -51,6 +52,13 @@ Backstage Kubernetes plugin discovers resources by matching:
 Apply demo resources:
 
 ```bash
+kubectl apply -f k8s/backstage-demo.yaml
+```
+
+If you get `spec.selector ... field is immutable` for Deployment updates:
+
+```bash
+kubectl delete deployment demo-app -n default --ignore-not-found
 kubectl apply -f k8s/backstage-demo.yaml
 ```
 
