@@ -8,6 +8,7 @@ nav:
   - Getting Started: getting-started.md
   - API Reference: api-reference.md
   - Architecture: architecture.md
+  - Backstage Integration: backstage-integration.md
   - Configuration: configuration.md
   - Runbooks:
     - Deployment: runbooks/deployment.md

@@ -3,8 +3,8 @@
 ## Check HPA Status
 
 ```bash
-kubectl get hpa -n inference
-kubectl describe hpa inference-api -n inference
+kubectl get hpa -n default
+kubectl describe hpa inference-api -n default
 ```
 
 ---
@@ -12,14 +12,14 @@ kubectl describe hpa inference-api -n inference
 ## Manual Scale Up (Traffic Spike)
 
 ```bash
-kubectl scale deployment/inference-api -n inference --replicas=8
-kubectl get pods -n inference -l app=inference-api
+kubectl scale deployment/inference-api -n default --replicas=8
+kubectl get pods -n default -l app=inference-api
 ```
 
 !!! warning "Scale back down after the event"
 
 ```bash
-    kubectl scale deployment/inference-api -n inference --replicas=2
+    kubectl scale deployment/inference-api -n default --replicas=2
 ```
 
 ---
@@ -27,8 +27,8 @@ kubectl get pods -n inference -l app=inference-api
 ## Model Backend Scaling
 
 ```bash
-kubectl scale deployment/llama3-backend -n inference --replicas=3
-kubectl exec -n inference <llama3-pod> -- nvidia-smi
+kubectl scale deployment/llama3-backend -n default --replicas=3
+kubectl exec -n default <llama3-pod> -- nvidia-smi
 ```
 
 ---

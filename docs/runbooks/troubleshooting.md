@@ -5,21 +5,21 @@
 **Check 1 — New deployment?**
 
 ```bash
-kubectl rollout history deployment/inference-api -n inference
+kubectl rollout history deployment/inference-api -n default
 ```
 
 If deployed in last 30 mins, roll back:
 
 ```bash
-kubectl rollout undo deployment/inference-api -n inference
+kubectl rollout undo deployment/inference-api -n default
 ```
 
 **Check 2 — Backend pod health:**
 
 ```bash
-kubectl get pods -n inference
-kubectl top pods -n inference
-kubectl logs -n inference <backend-pod> | grep -i "oom\|memory\|killed"
+kubectl get pods -n default
+kubectl top pods -n default
+kubectl logs -n default <backend-pod> | grep -i "oom\|memory\|killed"
 ```
 
 ---
@@ -27,8 +27,8 @@ kubectl logs -n inference <backend-pod> | grep -i "oom\|memory\|killed"
 ## Alert: `InferenceHighErrorRate` (5xx > 1%)
 
 ```bash
-kubectl logs -n inference deploy/inference-api --tail=100 | grep '"level":"error"'
-kubectl get pods -n model-registry
+kubectl logs -n default deploy/inference-api --tail=100 | grep '"level":"error"'
+kubectl get pods -n default
 ```
 
 ---
@@ -36,8 +36,8 @@ kubectl get pods -n model-registry
 ## Alert: `InferencePodCrashLooping`
 
 ```bash
-kubectl describe pod -n inference <pod-name>
-kubectl logs -n inference <pod-name> --previous
+kubectl describe pod -n default <pod-name>
+kubectl logs -n default <pod-name> --previous
 ```
 
 | Symptom in logs | Fix |

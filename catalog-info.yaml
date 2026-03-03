@@ -2,7 +2,6 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: inference-api
-  title: LLM Inference API
   description: >
     OpenAI-compatible inference service for all fine-tuned LLMs.
     Central serving layer for the ML Platform.
@@ -14,6 +13,8 @@ metadata:
     - mlops
     - llmops
   annotations:
+    backstage.io/kubernetes-id: demo-app
+    backstage.io/kubernetes-namespace: default
     github.com/project-slug: ezzat223/inference-api
     backstage.io/techdocs-ref: dir:.
   links:
@@ -26,7 +27,7 @@ metadata:
 spec:
   type: service
   lifecycle: production
-  owner: mlops-team
+  owner: xops-team
   system: ml-platform
   dependsOn:
     - component:model-registry

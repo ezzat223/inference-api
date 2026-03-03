@@ -10,9 +10,10 @@ can switch to our internal models by changing a single base URL — no other cod
 
 | Property | Value |
 | --- | --- |
-| **Owner** | MLOps Team |
+| **Owner** | xops-team |
 | **Language** | Python 3.11 / FastAPI |
 | **Status** | Production |
+| **System** | ml-platform |
 | **SLA** | 99.9% uptime / p99 < 300ms |
 | **Slack** | `#mlops-inference` |
 | **On-Call** | PagerDuty — *MLOps Inference* rotation |
