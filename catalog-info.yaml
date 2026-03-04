@@ -28,7 +28,7 @@ metadata:
 spec:
   type: service
   lifecycle: production
-  owner: xops-team
+  owner: xops
   system: ml-platform
   dependsOn:
     - component:model-registry
