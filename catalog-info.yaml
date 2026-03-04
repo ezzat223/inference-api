@@ -17,6 +17,7 @@ metadata:
     backstage.io/kubernetes-namespace: default
     github.com/project-slug: ezzat223/inference-api
     backstage.io/techdocs-ref: dir:.
+    backstage.io/adr-location: docs/adr
   links:
     - url: https://grafana.internal/d/inference
       title: Grafana Dashboard
